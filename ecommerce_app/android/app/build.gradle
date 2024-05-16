@@ -29,11 +29,13 @@ if (flutterVersionName == null) {
 android {
     namespace = "com.example.ecommerce_app"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    // Specific version required to fix an error after making these changes
+    // https://github.com/flutter-stripe/flutter_stripe/issues/1669#issuecomment-1980420602
+    ndkVersion = "25.1.8937393"
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     defaultConfig {
